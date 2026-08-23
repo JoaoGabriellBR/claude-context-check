@@ -2,6 +2,7 @@ import type { Finding, Rule, ScanContext } from "../types";
 import { claudeMdRules } from "./claude-md-rules";
 import { handoffRules } from "./handoff-rules";
 import { skillCoverageRules } from "./skill-coverage-rules";
+import { tokenBudgetRules } from "./token-budget-rules";
 
 /**
  * Registro central de regras. Para adicionar uma nova checagem, crie um novo
@@ -11,6 +12,7 @@ export const allRules: Rule[] = [
   ...claudeMdRules,
   ...skillCoverageRules,
   ...handoffRules,
+  ...tokenBudgetRules,
 ];
 
 /**

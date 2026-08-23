@@ -1,7 +1,6 @@
 import type { Finding, Rule, ScanContext } from "../types";
+import { estimateTokens } from "../tokens";
 
-// Aproximacao grosseira de ~4 caracteres por token (so usada quando nao
-// ha ANTHROPIC_API_KEY disponivel para contagem real via count_tokens).
 const MAX_RECOMMENDED_CHARS = 8000;
 
 export const claudeMdExists: Rule = {
@@ -31,7 +30,7 @@ export const claudeMdSize: Rule = {
 
     const size = context.claudeMdContent.length;
     if (size > MAX_RECOMMENDED_CHARS) {
-      const estimatedTokens = Math.round(size / 4);
+      const estimatedTokens = estimateTokens(context.claudeMdContent);
       return [
         {
           ruleId: "claude-md-size",

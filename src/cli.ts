@@ -2,10 +2,9 @@
 import path from "node:path";
 import { Command } from "commander";
 import { scanRepo } from "./scanner";
-import { allRules } from "./rules";
+import { runRules } from "./rules";
 import { computeScore } from "./scoring";
 import { printReport } from "./reporter";
-import type { Finding } from "./types";
 
 const program = new Command();
 
@@ -25,7 +24,7 @@ program
 
     try {
       const context = await scanRepo(repoPath);
-      const findings: Finding[] = allRules.flatMap((rule) => rule.check(context));
+      const findings = await runRules(context);
       const score = computeScore(findings);
 
       if (options.json) {

@@ -1,0 +1,40 @@
+{
+  "name": "claude-context-check",
+  "version": "0.1.0",
+  "description": "CLI que analisa a saude do contexto agentico de um repositorio Claude Code (CLAUDE.md, skills, handoffs) e devolve um score com recomendacoes.",
+  "bin": {
+    "chc": "./dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "start": "node dist/cli.js",
+    "scan:sample": "npm run build && node dist/cli.js scan examples/sample-repo",
+    "scan:clean": "npm run build && node dist/cli.js scan examples/clean-repo"
+  },
+  "keywords": [
+    "claude-code",
+    "cli",
+    "agentic-engineering",
+    "context-engineering"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "name": "claude-context-check",
-  "version": "0.1.0",
+  "version": "1.0",
   "author": "João Gabriel Silva",
-  "description": "CLI que analisa a saude do contexto agentico de um repositorio Claude Code (CLAUDE.md, skills, handoffs) e devolve um score com recomendacoes.",
+  "description": "CLI que analisa a saúde do contexto agêntico de um repositório Claude Code (CLAUDE.md, skills, handoffs) e devolve um score com recomendações.",
   "bin": {
     "chc": "./dist/cli.js"
   },

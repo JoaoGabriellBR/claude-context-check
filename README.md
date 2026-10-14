@@ -180,6 +180,8 @@ npm test
 - [x] Auditoria de frescor de handoffs com validação por data autorada para compatibilidade com CI
 - [x] Contagem de cold start com integração oficial à API da Anthropic e fallback local
 - [x] Suíte completa de testes automatizados com runner nativo `node:test`
+- [ ] Suporte a AGENTS.md como alternativa ao CLAUDE.md
+- [ ] Ampliar o regex para /security|seguranca|vulnerab|hardening/i, contemplando nomenclaturas como security-and-hardening.
 - [ ] Publicação do pacote no registro npm para execução direta via `npx claude-context-check`
 - [ ] Criação de GitHub Action oficial para comentar o relatório de contexto diretamente em Pull Requests
 - [ ] Implementação de flag interativa `--fix` para remoção automática de instruções duplicadas no `CLAUDE.md`
